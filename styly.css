@@ -13,7 +13,7 @@
     color: black;
 }
 
-.bocneMenu.body.tmana-tema {
+.bocneMenu {
     width: 150px;
     color: white;
     position: fixed;
@@ -21,7 +21,7 @@
     padding: 25px;
 }
 
-.bocneMenu.body.svetla-tema {
+.bocneMenu.svetla-tema {
     width: 150px;
     color: black;
     position: fixed;
@@ -35,7 +35,7 @@
     margin-right: 20px;
 }
 
-.bocneMenu.body.svetla-tema {
+.bocneMenu.svetla-tema {
     color: black;
 }
 
@@ -44,13 +44,13 @@
     padding: 0;
 }
 
-.bocneMenu.body.tmava-tema ul li a {
+.bocneMenu ul li a {
     text-decoration: none;
     color: white;
     margin-right: 20px;
 }
 
-.bocneMenu.body.svetla-tema {
+.bocneMenu.svetla-tema {
     text-decoration: none;
     color: black;
     margin-right: 20px;
@@ -65,7 +65,7 @@
     color: white;
 }
 
-.login-link.body.svetla-tema {
+.login-link.svetla-tema {
     text-decoration: none;
     color: black;
 }
@@ -79,7 +79,7 @@
     color: white;
 }
 
-.nadstavenia-menu.body.svetla-tema {
+.nadstavenia-menu.svetla-tema {
     text-align: center;
     color: black;
 }
