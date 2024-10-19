@@ -1,9 +1,14 @@
-.hlavicka {
+.hlavicka.tmava-tema {
     text-align: center;
     color: white;
 }
 
-.body {
+.hlavicka.svetla-tema {
+    text-align: center;
+    color: black;
+}
+
+.body.tmava-tema {
     background-color: black;
     color: white;
 }
@@ -31,26 +36,45 @@
 
 
 
-.bocneMenu h2 {
+.bocneMenu.tmava-tema h2 {
     margin-right: 20px;
+    color: white;
 }
 
-.bocneMenu.body.svetla-tema {
+.bocneMenu.tmava-tema h2 {
+    margin-right: 20px;
     color: black;
 }
 
-.bocneMenu ul {
+.bocneMenu.tmava-tema ul {
     text-decoration: none;
     padding: 0;
 }
 
-.bocneMenu.body.tmava-tema ul li a {
+.bocneMenu.svetla-tema ul {
+    text-decoration: none;
+    padding: 0;
+}
+
+.bocneMenu.tmava-tema ul li a {
     text-decoration: none;
     color: white;
     margin-right: 20px;
 }
 
-.bocneMenu.body.svetla-tema {
+.bocneMenu.svetla-tema ul li a {
+    text-decoration: none;
+    color: black;
+    margin-right: 20px;
+}
+
+.bocneMenu.tmava-tema {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+}
+
+.bocneMenu.svetla-tema {
     text-decoration: none;
     color: black;
     margin-right: 20px;
@@ -83,3 +107,9 @@
     text-align: center;
     color: black;
 }
+
+.prihlasenie {
+    text-align: center;
+    margin-top: 20px;
+}
+
