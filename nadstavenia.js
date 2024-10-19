@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const zmenaTemy = document.getElementById('zmenaTemy');
+    zmenaTemy = document.getElementById('zmenaTemy');
 
     const ulozenaTema = localStorage.getItem('tema');
 
