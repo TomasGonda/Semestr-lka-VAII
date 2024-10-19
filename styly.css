@@ -34,3 +34,16 @@
     color: red;
 }
 
+.login-link {
+    text-decoration: none;
+    color: white;
+}
+
+.login-link:hover {
+    color: red;
+}
+
+.nadstavenia-menu {
+    text-align: center;
+    color: white;
+}
