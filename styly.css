@@ -1,0 +1,36 @@
+.hlavicka {
+    text-align: center;
+    color: white;
+}
+
+.body {
+    background-color: black;
+}
+
+.bocneMenu {
+    width: 150px;
+    color: white;
+    position: fixed;
+    height: 30%;
+    padding: 25px;
+}
+
+.bocneMenu h2 {
+    margin-right: 20px;
+}
+
+.bocneMenu ul {
+    text-decoration: none;
+    padding: 0;
+}
+
+.bocneMenu ul li a {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+}
+
+.bocneMenu ul li a:hover {
+    color: red;
+}
+
