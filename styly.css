@@ -1,6 +1,7 @@
 .hlavicka {
     text-align: center;
     color: white;
+    margin-left: 200px;
 }
 
 .body {
@@ -19,6 +20,7 @@
     position: fixed;
     height: 30%;
     padding: 25px;
+    transition: transform 0.2s;
 }
 
 .bocneMenu.svetla-tema {
@@ -39,6 +41,7 @@
     color: black;
 }
 
+
 .bocneMenu ul {
     text-decoration: none;
     padding: 0;
@@ -48,6 +51,7 @@
     text-decoration: none;
     color: white;
     margin-right: 20px;
+    transition: transform 0.2s;
 }
 
 .bocneMenu.svetla-tema {
@@ -58,6 +62,7 @@
 
 .bocneMenu ul li a:hover {
     color: red;
+    transform: scale(1.1);
 }
 
 .login-link {
@@ -82,4 +87,71 @@
 .nadstavenia-menu.svetla-tema {
     text-align: center;
     color: black;
+}
+
+.kontajner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 15px;
+    margin-left: 200px;
+}
+
+.text-uvod {
+    background-color: rgb(59, 59, 59);
+    border: 1px solid white;
+    padding: 15px;
+    margin: 10px;
+    flex: 0 0 calc(25% - 15px);
+    text-align: left;
+}
+
+.uvod-informacie {
+    background-color: rgb(59, 59, 59);
+    border: 1px solid white;
+    padding: 15px;
+    margin: 10px;
+    flex: 0 0 calc(25% - 15px);
+    text-align: left;
+}
+
+.kontajner h3 {
+    text-align: center;
+}
+
+.postavy table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.postavy td {
+    padding: 10px;
+    text-align: center;
+}
+
+.postavy img {
+    width: 50px;
+    height: auto;
+    border: 1px solid rgb(59, 59, 59);
+    transition: transform 0.2s;
+}
+
+.postavy img:hover {
+    transform: scale(1.1);
+}
+
+.postavy p {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.text-uvod img {
+    width: 20px;
+    height: auto;
+    background-color: white;
+}
+
+.celaPostava img {
+    width: 300px;
+    height: auto;
 }
