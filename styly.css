@@ -1,7 +1,7 @@
 .hlavicka {
     text-align: center;
     color: white;
-    margin-left: 200px;
+    margin-left: 150px;
 }
 
 .body {
@@ -15,16 +15,19 @@
 }
 
 .bocneMenu {
-    width: 150px;
+    width: 180px;
     color: white;
     position: fixed;
     height: 30%;
     padding: 25px;
     transition: transform 0.2s;
+    background-color: rgb(59, 59, 59, 0.5);
+    border-radius: 10px;
+    border: 1px solid white;
 }
 
 .bocneMenu.svetla-tema {
-    width: 150px;
+    width: 180px;
     color: black;
     position: fixed;
     height: 30%;
@@ -52,6 +55,7 @@
     color: white;
     margin-right: 20px;
     transition: transform 0.2s;
+    font-size: 25px;
 }
 
 .bocneMenu.svetla-tema {
@@ -68,6 +72,7 @@
 .login-link {
     text-decoration: none;
     color: white;
+    font-size: 25px;
 }
 
 .login-link.svetla-tema {
@@ -77,6 +82,10 @@
 
 .login-link:hover {
     color: red;
+}
+
+.prihlasenie {
+    text-align: center;
 }
 
 .nadstavenia-menu {
@@ -94,7 +103,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 15px;
-    margin-left: 200px;
+    margin-left: 150px;
 }
 
 .text-uvod {
@@ -124,7 +133,7 @@
     border-collapse: collapse;
 }
 
-.postavy td {
+.postavy td, th {
     padding: 10px;
     text-align: center;
 }
@@ -133,6 +142,7 @@
     width: 50px;
     height: auto;
     border: 1px solid rgb(59, 59, 59);
+    margin-left: 150px;
     transition: transform 0.2s;
 }
 
@@ -143,6 +153,7 @@
 .postavy p {
     margin-top: 5px;
     font-weight: bold;
+    margin-left: 150px;
 }
 
 .text-uvod img {
@@ -155,3 +166,21 @@
     width: 300px;
     height: auto;
 }
+
+.zhrnutie-tabulka table {
+    width: 70%;
+    border-collapse: collapse;
+    margin-left: 300px;
+    margin-top: 20px;
+}
+
+.zhrnutie-tabulka th, td {
+    padding: 8px 10px;
+    border:  1px solid white;
+    text-align: center;
+}
+
+.zhrnutie-tabulka th {
+    background-color: rgb(59, 59, 59);
+}
+
