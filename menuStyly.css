@@ -1,0 +1,53 @@
+body {
+    margin: 0px;
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+.body {
+    width: 95%;
+    max-width: 2400px;
+}
+
+main {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.nav-bar ul {
+    list-style-type: none;
+    background-color: rgb(66, 66, 66);
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    align-items: center;
+}
+
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: flex;
+    text-align: center;
+}
+
+.nav-bar a:hover {
+    background-color: rgb(59, 59, 59);
+    color: red;
+}
+
+.nav-bar li {
+    float: left;
+    margin: 0 20px;
+}
+
+.nav-bar .prihlasenie {
+    float: right;
+}
+
