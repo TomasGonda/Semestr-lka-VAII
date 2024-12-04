@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST"] == "POST") {
         $uzivatel = mysqli_fetch_array($vysledok);
 
         if (password_verify($heslo, $uzivatel['heslo_hasch'])) {
-            echo "Prihlasenie bolo uspesne"
+            echo "Prihlasenie bolo uspesne";
         } else {
             echo "Nespravne heslo";
         }
