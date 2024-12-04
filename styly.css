@@ -4,16 +4,6 @@
     color: white;
 }
 
-.nadstavenia-menu {
-    text-align: center;
-    color: white;
-}
-
-.nadstavenia-menu.svetla-tema {
-    text-align: center;
-    color: black;
-}
-
 .kontajner {
     display: flex;
     flex-wrap: wrap;
