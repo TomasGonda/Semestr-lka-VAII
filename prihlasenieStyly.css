@@ -1,0 +1,24 @@
+.prihlasenie {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 60px;
+    padding: 30px;
+}
+
+.prihlasenie table {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    width: 300px;
+}
+
+.prihlasenie th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid grey;
+
+}
+
+.prihlasenie th {
+    background-color: rgb(59, 59, 59);
+}
