@@ -1,5 +1,5 @@
 
-document.getElementById("registraciaForm").addEventListener("submit", function(event) {
+/*document.getElementById("registraciaForm").addEventListener("submit", function(event) {
     let email = document.getElementById("email").value;
     let heslo = document.getElementById("password").value;
     let errMsg = document.getElementById("errMsg");
@@ -8,7 +8,7 @@ document.getElementById("registraciaForm").addEventListener("submit", function(e
 
     let err = [];
 
-    let emailFormat = /^[a - z] + @[a - z] + \. [a - z]$/;
+    let emailFormat = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if(!emailFormat.test(email)) {
         err.push("Zly format mailu");
@@ -18,8 +18,8 @@ document.getElementById("registraciaForm").addEventListener("submit", function(e
         err.push("Aspon 6 znakov heslo");
     }
 
-    if (err.lenght > 0) {
-        event.preventDefault();
+    if (err.length > 0) {
+        //event.preventDefault();
         errMsg.innerHTML = err.join("<br>");
     }
-});
+});*/

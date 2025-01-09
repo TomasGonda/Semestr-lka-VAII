@@ -1,8 +1,8 @@
 <?php
 $server = "localhost";
-$email = "root"
-$heslo = "";
-$databaza = "db_uzivatelia"
+$email = "root@root.sk";
+$heslo = "000000";
+$databaza = "db_uzivatelia";
 
 $conn = mysqli_connect($server, $email, $heslo, $databaza);
 
