@@ -10,3 +10,4 @@ if (!$conn) {
     die("Pripojenie zlyzahlo: " . mysqli_connect_error());
 }
 echo "Pripojene";
+?>

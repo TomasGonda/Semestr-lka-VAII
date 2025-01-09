@@ -26,3 +26,4 @@ if ($_SERVER["REQUEST"] == "POST") {
 }
 
 sqli_close($conn);
+?>
