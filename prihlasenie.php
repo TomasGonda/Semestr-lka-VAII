@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+var_dump($_SESSION);
 require "db_pripoj.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -17,9 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $uzivatel = $vysledok->fetch_assoc();
 
           if (password_verify($heslo, $uzivatel['heslo_hash'])) {
-               echo "Prihlasenie bolo uspesne";
+            $_SESSION['user'] = $uzivatel['email'];
+            header("Location: prihlasenie.html");
+            echo "Prihlasenie bolo uspesne";
            } else {
               echo "Nespravne heslo";
+              header("Location: prihlasenie.html");
            }
            $stmt->close();
      } else {

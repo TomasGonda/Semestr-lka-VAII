@@ -21,5 +21,25 @@ document.getElementById("registraciaForm").addEventListener("submit", function(e
     if (err.length > 0) {
         event.preventDefault();
         errMsg.innerHTML = err.join("<br>");
+    } else {
+        //Ajax
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "registracia.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                let response = JSON.parse(xhr.responseText);
+                if (response.success) {
+                    window.location.href = "prihlasenie.html";
+                } else {
+                    errMsg.innerHTML = response.errMsg;
+                }
+            } else {
+                errMsg.innerHTML = "Došlo k chybe pri spracovaní formulára.";
+            }
+        };
+
     }
+    xhr.send("email=" + email + "&heslo=" + heslo);
+    event.preventDefault();
 });

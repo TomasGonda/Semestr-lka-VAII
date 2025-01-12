@@ -1,3 +1,7 @@
+<?php
+   session_start(); 
+?>
+
 <!DOCTYPE html>
 <html lang="sk">
 <head>
@@ -22,79 +26,90 @@
             <li><a href="postavy.html">Postavy</a></li>
             <li><a href="artefakty.html">Artefakty</a></li>
             <li><a href="mojePostavy.html">Moje postavy</a></li>
-            <li class="prihlasenie"><a href="prihlasenie.html">Prihlásenie</a></li>
+            <li class="prihlasenie <?php echo isset($_SESSION['user']) ? 'logged-in' : 'logged-out'; ?>">
+                <?php if (isset($_SESSION['user'])) : ?>
+                  <form action ="odhlasenie.php" method="post" style="display: inline;">
+                    <button type="submit">Odhlásiť</button>
+                  </form>
+                
+                <?php else: ?>
+                  <a href ="prihlasenie.html">Prihlásenie</a>
+                <?php endif; ?>
+            </li>
         </ul>
    </nav>
 
     <div class="prihlasenie">
-        <form action="prihlasenie.php" method="post" id="prihlasenieForm">
-            <table>
-                <thead>
-                    <tr>
-                        <th>
-                            <h2>Prihlásenie</h2>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="box">
-                                <input type="text" id="LogEmail" name="email" placeholder="Email" required>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="box">
-                                <input type="password" id="LogPassword" name="heslo" placeholder="Heslo" required>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button type="submit">Prihlasenie</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </form>
-        <form action="registracia.php" method="post" id="registraciaForm">
-            <table>
-                <thead>
-                    <tr>
-                        <th>
-                            <h2>Registrácia</h2>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="box">
-                                <input type="text" id="email" name="email" placeholder="Email" required>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="box">
-                                <input type="password" id="password" name="heslo" placeholder="Heslo" required>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button type="submit">Registruj</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <p id="errMsg" style="color: red;"></p>
-        </form>
+        <?php if (!isset($_SESSION['user'])) : ?>
+            <form action="prihlasenie.php" method="post" id="prihlasenieForm">
+                <table>
+                  <thead>
+                        <tr>
+                           <th>
+                             <h2>Prihlásenie</h2>
+                           </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="box">
+                                    <input type="text" id="LogEmail" name="email" placeholder="Email" required>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="box">
+                                    <input type="password" id="LogPassword" name="heslo" placeholder="Heslo" required>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="submit">Prihlasenie</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <form action="registracia.php" method="post" id="registraciaForm">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <h2>Registrácia</h2>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="box">
+                                    <input type="text" id="email" name="email" placeholder="Email" required>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="box">
+                                    <input type="password" id="password" name="heslo" placeholder="Heslo" required>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="submit">Registruj</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p id="errMsg" style="color: red;"></p>
+            </form>
+        <?php else: ?>
+            <h2>Vitaj</h2>
+        <?php endif; ?>
     </div>
-    
-
-    <script scr="kontrolaRegistracie.js"></script>
+<script src="kontrolaRegistracie.js"></script>
 </body>
 </html>
