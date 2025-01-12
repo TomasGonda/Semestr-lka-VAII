@@ -5,20 +5,23 @@ require "db_pripoj.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST['email'])&& isset($_POST['heslo'])) {
-        $email = $_POST['email'];
+        $email = trim($_POST['email']);
         $heslo = $_POST['heslo'];
 
-        $sql = "SELECT * FROM uzivatelia WHERE email = '$email'";
-        $vysledok = mysqli_query($conn, $sql);
+        $stmt = $conn->prepare("SELECT * FROM uzivatelia WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $vysledok = $stmt->get_result();
 
-        if (mysqli_num_rows($vysledok) > 0) {
-            $uzivatel = mysqli_fetch_array($vysledok);
+        if ($vysledok->num_rows > 0) {
+            $uzivatel = $vysledok->fetch_assoc();
 
           if (password_verify($heslo, $uzivatel['heslo_hash'])) {
                echo "Prihlasenie bolo uspesne";
            } else {
               echo "Nespravne heslo";
            }
+           $stmt->close();
      } else {
         echo "Chybajuce udaje";
      } 

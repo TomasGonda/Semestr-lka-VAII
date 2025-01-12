@@ -1,5 +1,5 @@
 
-/*document.getElementById("registraciaForm").addEventListener("submit", function(event) {
+document.getElementById("registraciaForm").addEventListener("submit", function(event) {
     let email = document.getElementById("email").value;
     let heslo = document.getElementById("password").value;
     let errMsg = document.getElementById("errMsg");
@@ -19,7 +19,7 @@
     }
 
     if (err.length > 0) {
-        //event.preventDefault();
+        event.preventDefault();
         errMsg.innerHTML = err.join("<br>");
     }
-});*/
+});

@@ -1,10 +1,10 @@
 <?php
 $server = "localhost";
-$email = "root@root.sk";
-$heslo = "000000";
+$username = "root";
+$heslo = "";
 $databaza = "db_uzivatelia";
 
-$conn = mysqli_connect($server, $email, $heslo, $databaza);
+$conn = mysqli_connect($server, $username, $heslo, $databaza);
 
 if (!$conn) {
     die("Pripojenie zlyzahlo: " . mysqli_connect_error());

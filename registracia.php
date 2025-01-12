@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"]=== "POST") {
 } else {
     echo "Formular sa neodoslal";
 }
-/*require "db_pripoj.php";
+require "db_pripoj.php";
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 var_dump(($_POST));
@@ -20,21 +20,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             echo "Heslo musi mat aspon 6 znakov";
             exit;
         }
-        $hash = password_hash($heslo, PASSWORD_DEFAULT);
-        $sql = "SELECT * FROM uzivatelia WHERE email = '$email'";
-        $vysledok = mysqli_query($conn, $sql);
 
-        if (mysqli_num_rows($vysledok) == 0) {
-            $sql_insert = "INSERT INTO uzivatelia(email, heslo_hash) VALUES ('$email', '$hash')";
-            if (mysqli_query($conn, $sql_insert)) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "Neplatny format emailu";
+            exit;
+        }
+        $hash = password_hash($heslo, PASSWORD_DEFAULT);
+
+        $stmt = $conn->prepare("SELECT * FROM uzivatelia WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $vysledok = $stmt->get_result();
+
+        if ($vysledok->num_rows == 0) {
+            $stmt_insert = $conn->prepare("INSERT INTO uzivatelia (email, heslo_hash) VALUES (?, ?)");
+            $stmt_insert->bind_param("ss", $email, $hash);
+            if ($stmt_insert->execute()) {
                 echo "Registracia bola uspesna";
               } else {
-                echo "Chyba pri registracii";
+                echo "Chyba pri registracii". $stmt_insert->error;
              }
+             $stmt_insert->close();
          }
          else {
                 echo "Tento email uz je zaregistrovany";
          } 
+         $stmt->close();
     } else {
         echo "Neboli zadane udaje";
     }
@@ -44,4 +55,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 
 mysqli_close($conn);
-?>*/
+?>
